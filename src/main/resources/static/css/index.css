@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+}
+.header{
+    height: 50px;
+}
+.image-star-wrapper{
+    position: absolute;
+}
+.image-star{
+    width:300px;
+    height:180px;
+    margin-top:250px;
+    margin-left:150px;
+    position: relative;
+}
+.image-mole2-wrapper{
+    position: absolute;
+}
+.image-mole2{
+    margin-top:340px;
+    margin-left:240px;
+    position: relative;
+
+}
+
+.image-logo{
+    animation: fadein 2s;
+    margin-top:100px;
+    margin-left:480px;
+    position: absolute;
+    z-index:1;
+    width:300px;
+    height:350px;
+}
+.image-cow-wrapper{
+    position: absolute;
+}
+.image-cow{
+    position: relative;
+    margin-top:170px;
+    margin-left:830px;
+    width:250px;
+    height:180px;
+}
+.image-mole1-wrapper{
+    position: absolute;
+}
+.image-mole1{
+    position: relative;
+    margin-top:255px;
+    margin-left:705px;
+}
+
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

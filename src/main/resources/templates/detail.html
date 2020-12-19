@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ONMU::전시보기</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/exhibition-detail.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+
+</head>
+<body>
+<header class="layout-header-fixed-container">
+    <div class="layout-header-background"></div>
+    <div class="layout-header-inner-container">
+        <img th:src="@{/assets/logo1.png}" th:onclick="redirectTo('');" class="layout-logo"  />
+        <div class="layout-header-item-container">
+            <p class="layout-header-item-text" >공지사항</p>
+            <p class="layout-header-item-text" th:onclick="redirectTo('/exhibitions');">전시 둘러보기</p>
+            <p class="layout-header-item-text" th:onclick="redirectTo('/form');">전시 신청하기</p>
+        </div>
+        <div class="layout-header-icon-wrap">
+
+        </div>
+    </div>
+</header>
+<div class="layout-header-top"></div>
+<div class="layout-main">
+    <div class="page-container">
+        <h1 class="page-title" th:text="${exhibition.name}"></h1>
+        <div class="video-outer-container">
+            <div class="video-container center-aligned">
+                <video width="1080" height= auto controls>
+                    <source th:src="@{/video/1.mp4}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="page-content-container center-aligned">
+            <h3 class="page-content-single-row">
+                <span class="single-row-key">전시기간: </span>
+                <span class="single-row-value" th:text="${exhibition.start}+'-'+${exhibition.end}"></span>
+            </h3>
+            <h3 class="page-content-single-row">
+                <span class="single-row-key">작가-</span>
+                <span class="single-row-value" th:text="${exhibition.artist.name}"></span>
+            </h3>
+            <h3 class="page-content-single-row">
+                <span class="single-row-key">전시 전문가-</span>
+                <span class="single-row-value" th:text="${exhibition.expert.name}"></span>
+            </h3>
+            <h3 class="page-content-single-row">
+                <span class="single-row-key">조회수</span>
+                <span class="single-row-value" th:text="${exhibition.view}"></span>
+            </h3>
+            <div class="page-content-block-container">
+                <h4 class="content-block-title">작가 작품활동</h4>
+                <p class="content-block-text">
+                    박래현(1920-1976)은 20세기 한국화단에 선구적 자취를 남긴 여성 미술가로서, 판화와 태피스트리를 넘나들며 기존 동양화의 관습을 타파해 나갔다. <br>
+                    하지만 오십 대에 갑자기 타계한 뒤 그의 예술은 점차 잊혔고 오랫동안 운보 김기창의 아내로서만 기억되었다.<br>
+                    박래현은 여성 미술가가 드물던 시절에 육아와 가사에 쫓기면서도 예술가로 살아남기 위해 치열하게 노력했다. <br>
+                    반복되는 일상에서 예술의 소재를 찾고, 가사 노동에서 요구되는 수공(手工)을 응용해 작품의 표현 기법을 확장시켰으며, 여성, 어머니, 동양인이라는 정체성을 토대로 독자적인 예술세계를 완성하였다.
+                </p>
+            </div>
+            <div class="page-content-block-container">
+                <h4 class="content-block-title">상세 설명</h4>
+                <p class="content-block-text">
+                    일제 강점기에 태어난 박래현은 일본에 건너가서 일본화를 배웠다. <br>
+                    유학을 마치고 해방을 맞이한 박래현에게 주어진 새로운 과제는 일본화의 자취를 지우고, 관념적인 전통회화를 답습하지 않으며, ‘현대’에 어울리는 ‘한국화’를 창작하는 것이었다.<br>
+                    박래현은 1950년대 한국에 유입되는 서양화의 물결을 참고하고 한국적인 아름다움을 고민하며 새로운 도전을 거듭했다.<br>
+                    1956년에 《제8회 대한미협전》에서 &lt;이른 아침&gt;으로 《제5회 대한민국미술전》에서 &lt;노점&gt;으로 연이어 대통령상을 타면서 화단의 정상에 선 박래현은 화가로서 독자적인 기반을 마련하였다.
+                </p>
+            </div>
+            <div class="page-content-block-container">
+                <h4 class="content-block-title">전시장 정보</h4>
+                <p class="content-block-text" th:text="${exhibition.museum.name}+' '+${exhibition.museum.location}">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

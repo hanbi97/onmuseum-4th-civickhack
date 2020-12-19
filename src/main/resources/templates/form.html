@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ONMU::Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<header class="layout-header-fixed-container">
+    <div class="layout-header-background"></div>
+    <div class="layout-header-inner-container">
+        <img th:src="@{/assets/logo1.png}" th:onclick="redirectTo('');" class="layout-logo"/>
+        <div class="layout-header-item-container">
+            <p class="layout-header-item-text">공지사항</p>
+            <p class="layout-header-item-text" th:onclick="redirectTo('exhibitions');">전시 둘러보기</p>
+            <p class="layout-header-item-text" th:onclick="redirectTo('form');">전시 신청하기</p>
+        </div>
+        <div class="layout-header-icon-wrap">
+
+        </div>
+    </div>
+</header>
+<div class="layout-header-top"></div>
+<div class="layout-main">
+    <div class="page-container center-aligned">
+        <h1 class="page-title">전시 신청하기</h1>
+        <div class="page-contents">
+            <div class="question-wrap">
+                <p class="question-label">보고 싶은 전시의 장르를 선택해 주세요.</p>
+                <div class="genre-container">
+                    <p class="genre-item" th:onclick="filterItems(this,'뮤지컬',null)">뮤지컬</p>
+                    <p class="genre-item" th:onclick="filterItems(this,'미술',null)">미술</p>
+                    <p class="genre-item" th:onclick="filterItems(this,'발라드',null)">발라드</p>
+                    <p class="genre-item" th:onclick="filterItems(this,'토크',null)">토크</p>
+                    <p class="genre-item" th:onclick="filterItems(this,'클래식',null)">클래식</p>
+                    <p class="genre-item" th:onclick="filterItems(this,'키즈',null)">키즈</p>
+                </div>
+            </div>
+            <div class="question-wrap">
+                <p class="question-label">보고 싶은 전시의 분위기를 선택해 주세요.</p>
+                <div class="category-container">
+                    <p class="category-item" th:onclick="filterItems(this,null,'장엄한')">장엄한</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'차분한')">차분한</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'격분한')">격분한</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'애틋한')">애틋한</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'따뜻한')">따뜻한</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'활발한')">활발한</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'열정적')">열정적</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'몽환적')">몽환적</p>
+                    <p class="category-item" th:onclick="filterItems(this,null,'유쾌한')">유쾌한</p>
+                </div>
+            </div>
+            <div class="question-wrap">
+                <p class="question-label">선택지의 장르 외에 추가적으로 관람하고 싶은 장르가 있으신가요?</p>
+                <textarea name="reason" class="question-input" placeholder="추가적으로 관람하고 싶은 장르에 대해 작성해 주세요"></textarea>
+            </div>
+            <div class="question-wrap">
+                <p class="question-label">온뮤에서 관람하고 싶은 전시가 있으신가요?</p>
+                <textarea name="reason" class="question-input" placeholder="관람하고 싶은 전시 제목을 작성해 주세요"></textarea>
+            </div>
+            <p class="submit" th:onclick="success()">제출하기</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

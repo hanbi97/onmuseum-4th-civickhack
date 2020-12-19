@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ONMU</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css"  th:href="@{/css/index.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+<header class="layout-header-fixed-container">
+    <div class="layout-header-background"></div>
+    <div class="layout-header-inner-container">
+        <div class="layout-header-item-container">
+            <p class="layout-header-item-text">공지사항</p>
+            <p class="layout-header-item-text" th:onclick="redirectTo('exhibitions');">전시 둘러보기</p>
+            <p class="layout-header-item-text" th:onclick="redirectTo('form');">전시 신청하기</p>
+        </div>
+        <div class="layout-header-icon-wrap">
+
+        </div>
+    </div>
+</header>
+<div class="image-star-wrapper">
+    <img class="image-star" th:src="@{/assets/star.png}">
+</div>
+<div class="image-mole2-wrapper">
+    <img class="image-mole2" th:src="@{/assets/mole2.png}">
+</div>
+<img class="image-logo" th:src="@{/assets/logo2.png}">
+<div class="image-cow-wrapper">
+    <img class="image-cow" th:src="@{/assets/cow.png}">
+</div>
+<div class="image-mole1-wrapper">
+    <img class="image-mole1" th:src="@{/assets/mole1.png}">
+</div>
+</body>
+</html>
