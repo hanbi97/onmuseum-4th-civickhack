@@ -14,6 +14,7 @@ Spring Boot, Thymeleaf
 ### 🎬 프로토타입 시연 영상
 https://youtu.be/RmOW8zAGfq0
 
+##### 용량 문제로 static image file upload 하지 않았음
 ###### 제 4회 정부 혁신 끝장 개발 대회
 
 
